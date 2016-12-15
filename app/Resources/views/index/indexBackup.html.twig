@@ -1,0 +1,66 @@
+{% extends 'starterBackup.html.twig' %}
+
+{% block title %}
+    Bienvenido
+{% endblock %}
+
+{% block first_javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/slideshow.js') }}" > </script>
+{% endblock %}
+
+
+{% block innerBody %}
+<header id="header_outer">
+    <div class="container">
+        <div class="header_section">
+            <div class="bxslider">
+                <table>
+                    <tr>
+                        <td class="fade"><img src="{{ asset('img/foto1.jpg') }}" /></td>
+                        <td class="fade"><img src="{{ asset('img/foto2.jpg') }}" /></td>
+                        <td class="fade"><img src="{{ asset('img/foto4.jpg') }}" /></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="topcontent" >
+    <div class="container">
+        <div class="top_content">
+            <div id="sugerencias">
+                <h2> Sugerencias </h2>
+                <h3 class="top_content_right"> Consejos utiles</h3>
+                <div class="logo_turismo"><img src="{{ asset('img/MM_Turismo.gif') }}" /></div>
+                <p>Fin de semana largo, el momento ideal para disfrutar de un merecido descanso. Cuatro días lejos de la ciudad, el ruido y las obligaciones. ¡Manos a la obra y a armar el bolso! Un viaje con éxito comienza siempre por una maleta bien hecha para evitar preocupaciones de qué prenda llevar y qué dejar te damos algunos consejos para armar un bolso perfecto:
+                </p><p>
+                    Colocar primero la campera en el fondo de la valija o bolso, abotonarla y doblar sus mangas.
+                </p><p>
+                    Guardar los pantalones sobre la campera, con la cintura contra el borde y las piernas sobresaliendo a ambos lados del equipaje.
+                </p><p>
+                    Disponer las camisas, camisetas, sweaters y ropa interior arriba de todo. A continuación doblar los pantalones y después el bajo de la campera.</p>
+                <h6 class="link_leer_mas_consejos"> Leer Mas ... </h6>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="servicios">
+    {% block servicios %}
+
+    {% endblock %}
+</section>
+
+<section id="destinos">
+    {% block destinos %}
+    {% endblock %}
+</section>
+
+<section id="especiales">
+    {% block especiales %}
+    {% endblock %}
+</section>
+
+{% endblock %}

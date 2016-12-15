@@ -1,0 +1,70 @@
+{% extends 'bootstrap_base.html.twig' %}
+
+{% block title %}
+Bienvenido a MM Turismo
+{% endblock %}
+
+{% block stylesheets %}
+     {{ parent() }}
+    <link href="{{ asset('bootstrap/docs/examples/starter-template/starter-template.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+    {% block defaultNavbar %}  
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">                
+                <div id="navbar" class="navbar-collapse collapse">                                        
+{# Se modifico el archivo de mas abajo para que el menu se muestre mejor. Por lo visto esta es la forma de hacerlo #}
+{# mm_turismo/vendor/knpKnpMenuBundle::menu.html.twiglabs/knp-menu-bundle/Resources/views/menu.html.twig #}
+              		{{ knp_menu_render('admin_menu') }}
+
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+
+    <div class="container">
+        <div class="starter-template">
+            
+            {% block innerBody %}
+				
+            {% endblock %}
+            
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block footer %}
+<section id="footer">
+    <div class="section_footer">
+        <div class="direccion"><p>Dirección: Av Cronl Desvergonzado</p></div>
+        <table class="contacto">
+            <tr>
+                <th>Facefook</th>
+                <th>Twitter</th>
+                <th>Google</th>
+            </tr>
+            <tr>
+                <td><button url="www.facebook.com"> <img src="{{ asset('img/facebook.png') }}" /> </button></td>
+                <td><button> <img src="{{ asset('img/twitter.png') }}" /> </button></td>
+                <td><button> <img src="{{ asset('img/google.png') }}" /> </button></td>
+            </tr>
+        </table>
+        <div class="webpage_devl">federico solorza - ningun derecho reservado</div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+{% block last_javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('bootstrap/docs/assets/js/vendor/jquery.min.js') }}"></script>
+	<script>window.jQuery || document.write('<script src="{{ asset('bootstrap/docs/assets/js/vendor/jquery.min.js') }}"><\/script>')</script>
+	<script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+

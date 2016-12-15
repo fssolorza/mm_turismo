@@ -1,0 +1,55 @@
+{% extends 'knp_menu.html.twig' %}
+
+{% macro attributes(attributes) %}
+    {% for name, value in attributes %}
+        {%- if value is not none and value is not sameas(false) -%}
+            {{- ' %s="%s"'|format(name, value is sameas(true) ? name|e : value|e)|raw -}}
+        {%- endif -%}
+    {%- endfor -%}
+{% endmacro %}
+
+{% block root %}
+    {% set listAttributes = item.childrenAttributes %}
+    {{ block('list') -}}
+{% endblock %}
+
+{% block children %}
+    {# save current variables #}
+    {% set currentOptions = options %}
+    {% set currentItem = item %}
+    {# update the depth for children #}
+    {% if options.depth is not none %}
+        {% set options = currentOptions|merge({'depth': currentOptions.depth - 1}) %}
+    {% endif %}
+    {% for item in currentItem.children %}
+        {{ block('item') }}
+    {% endfor %}
+    {# restore current variables #}
+    {% set item = currentItem %}
+    {% set options = currentOptions %}
+{% endblock %}
+
+{% block spanElement %}
+    {% if not item.attribute('dropdown') %}
+        <span{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}</span>
+    {% endif %}
+{% endblock %}
+
+{% block list %}
+    {% if item.hasChildren and options.depth is not sameas(0) and item.displayChildren %}
+        {% if item.attribute('dropdown') %}
+            <ul class="nav x">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ item.label }} <b  class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        {{ block('children') }}
+                    </ul>
+                </li>
+            </ul>
+        {% else %}
+            <ul class="nav">
+                {{ block('children') }}
+            </ul>
+        {% endif %}
+    {% endif %}
+{% endblock %}

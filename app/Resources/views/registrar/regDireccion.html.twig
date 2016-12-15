@@ -1,0 +1,46 @@
+{% extends 'starter.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block last_javascripts %}
+    {{ parent() }}
+
+    <script>
+        var $nuevaCiudad;
+		var $nuevoPais;
+
+        $nuevaCiudad = $('#direccion_nuevaCiudad');
+        $nuevaCiudad.change(function(){
+            var $form = $(this).closest('form');
+            var data = {};
+            data[$nuevaCiudad.attr('name')] = $nuevaCiudad.val();
+
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html){
+					$('#direccion_ciudad').replaceWith(
+							$(html).find('#direccion_ciudad'));
+				}
+			});
+		});
+		
+		
+    </script>
+    
+{% endblock %}
+
+{% block title %}
+	Registrar Direccion
+{% endblock %}
+
+{% block innerBody %}
+    <h3>Registrar Direccion</h3>
+    {{ form_start(form) }}
+		{{ form_widget(form) }}
+    {% block button %}
+        <button type="submit" class="btn btn-success">Guardar</button>
+    {% endblock %}
+
+    {{ form_end(form) }}
+{% endblock %}

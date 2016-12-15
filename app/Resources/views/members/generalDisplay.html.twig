@@ -1,0 +1,20 @@
+{% extends 'starter.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block title %}
+	Busqueda de entidades
+{% endblock %}
+
+{% block innerBody %}
+
+	<div class="jumbotron">
+		<h3>Busqueda de entidades</h3>
+		<p>Puedes ingresar uno o varios datos para buscar la entidad en cuestion</p>
+	<div>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+         <button type="submit" class="btn btn-info">Buscar</button>
+    {{ form_end(form) }}
+{% endblock %}
+

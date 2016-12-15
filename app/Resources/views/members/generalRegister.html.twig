@@ -1,0 +1,21 @@
+{% extends 'starter.html.twig' %}
+{# el siguiente twig esta ubicado en vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form #}
+
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block title %}
+	Carga de entidades
+{% endblock %}
+
+
+{% block innerBody %}
+	<div class="jumbotron">
+		<h3>Carga de entidades</h3>
+	<div>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-success">Guardar</button>
+    {{ form_end(form) }}
+{% endblock %}
+

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block meta %}
+    {{ parent() }}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="symfony framework tpo">
+    <meta name="author" content="federico solorza">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+{% endblock %}
+
+{% block title %}
+Default title Template for Bootstrap
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ asset('bootstrap/docs/assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{% block first_javascripts %}
+    {{ parent() }}
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
+
+{% block footer %}
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+{% endblock %}
+
+
+{% block last_javascripts %}
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ asset('bootstrap/js/tests/vendor/jquery.min.js') }}"><\/script>')</script>
+    <script src="asset{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ asset('bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js') }}"></script>
+{% endblock %}
+

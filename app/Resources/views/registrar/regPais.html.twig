@@ -1,0 +1,48 @@
+{% extends 'starter.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block last_javascripts %}
+    {{ parent() }}
+    <script>
+        var $nuevoPais;
+        $nuevoPais = $('#reg_pais_nuevoPais');
+        $nuevoPais.change(function() {
+            var $form = $(this).closest('form');
+            var data = {};
+            data[$nuevoPais.attr('name')] = $nuevoPais.val();
+          
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html) {
+                    $('#reg_pais_pais').replaceWith(
+                            $(html).find('#reg_pais_pais'));
+                   // El label no se cambia. Porque el mismo esta por fuera del div cuyo id se especifica.
+                }
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block title %}
+	Registrar Pais
+{% endblock %}
+
+{% block innerBody %}
+    <h3>Registrar Pais</h3>
+    {{ form_start(form) }}
+		
+		{# existe una entidad que no se persiste llamada regPais.php #}
+		{# Podria haberse utilizado la funcion form_widget logran un efecto equivalente. 
+		La diferencia es que el orden de los form-controls estaria determinado por el formBuilder, es decir por RegPaisType, dejando el checkbox primero y luego el selectBox. #}
+				
+		{{ form_row(form.pais) }}
+		{{ form_row(form.nuevoPais) }}
+
+		{% block button %}
+			<button type="submit" class="btn btn-success">Guardar</button>
+		{% endblock %}
+
+    {{ form_end(form) }}
+{% endblock %}

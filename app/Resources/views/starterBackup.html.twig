@@ -1,0 +1,117 @@
+{% extends 'bootstrap_base.html.twig' %}
+
+{% block title %}
+Bienvenido a MM Turismo
+{% endblock %}
+
+{% block stylesheets %}
+     {{ parent() }}
+    <link href="{{ asset('bootstrap/docs/examples/starter-template/starter-template.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	{{ parent() }}
+    {% block defaultNavbar %}  
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">                
+                <div id="navbar" class="navbar-collapse collapse">                                        
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ path('home') }}">Inicio</a></li>
+                        <li><a href="#">Sugerencias</a></li>
+                        <li><a href="{{ path('serviciosGenerales') }}">Servicios</a></li>
+                        <li><a href="{{ path('publicBlog') }}">Blogs y Comentarios</a></li>
+                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                        <li class="dropdown">
+							<a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#"> Registrar Datos
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{ path('registrarPais') }}">Registrar Pais</a></li>
+								<li><a href="{{ path('registrarCiudad') }}">Registrar Ciudad</a></li>
+								<li><a href="{{ path('registrarDireccion') }}">Registrar Direccion</a></li>
+								<li><a href="{{ path('registrarAeropuerto') }}">Registrar Aeropuerto</a></li>
+								<li><a href="{{ path('registrarHotel') }}">Registrar Hotel</a></li>
+								<li><a href="{{ path('registrarSalon') }}">Registrar Salon</a></li>
+								<li><a href="{{ path('registrarTag') }}">Registrar Tag</a></li>
+								<li><a href="{{ path('registrarViaje') }}">Registrar Viaje</a></li>
+								<li><a href="{{ path('registrarPromocion') }}">Registrar Promocion</a></li>
+								<li><a href="{{ path('registrarEvento') }}">Registrar Evento</a></li>
+								<li><a href="{{ path('registrarCliente') }}">Registrar Cliente</a></li>
+								<li><a href="{{ path('registrarContrato') }}">Registrar Contrato</a></li>
+								<li><a href="{{ path('fos_user_registration_register') }}">Registrar Usuario</a></li>
+								<li><a href="{{ path('registrarSesion') }}">Registrar Sesion</a></li>
+								<li><a href="{{ path('registrarFoto') }}">Registrar Foto</a></li>
+								<li><a href="{{ path('registrarComentario') }}">Registrar Comentario</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#"> Buscar Datos
+							<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="{{ path('searchPais') }}">Buscar Pais</a></li>
+								<li><a href="{{ path('searchCiudad') }}">Buscar Ciudad</a></li>
+								<li><a href="{{ path('searchDireccion') }}">Buscar Direccion</a></li>
+								<li><a href="{{ path('searchAeropuerto') }}">Buscar Aeropuerto</a></li>
+								<li><a href="{{ path('searchHotel') }}">Buscar Hotel</a></li>
+								<li><a href="{{ path('searchSalon') }}">Buscar Salon</a></li>
+								<li><a href="{{ path('buscarViaje') }}">Buscar Viaje</a></li>
+								<li><a href="{{ path('searchPromocion') }}">Buscar Promocion</a></li>
+								<li><a href="{{ path('searchEvento') }}">Buscar Evento</a></li>
+								<li><a href="{{ path('searchCliente') }}">Buscar Cliente</a></li>
+								<li><a href="{{ path('searchContrato') }}">Buscar Contrato</a></li>
+								<li><a href="{{ path('searchUsuario') }}">Buscar Usuario</a></li>
+								<li><a href="{{ path('searchSesion') }}">Buscar Sesion</a></li>
+								<li><a href="{{ path('searchFoto') }}">Buscar Foto</a></li>
+								<li><a href="{{ path('searchComentario') }}">Buscar Comentario</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
+
+
+    <div class="container">
+        <div class="starter-template">
+            
+            {% block innerBody %}
+				Holaaaa
+            {% endblock %}
+            
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block footer %}
+<section id="footer">
+    <div class="section_footer">
+        <div class="direccion"><p>Dirección: Av Cronl Desvergonzado</p></div>
+        <table class="contacto">
+            <tr>
+                <th>Facefook</th>
+                <th>Twitter</th>
+                <th>Google</th>
+            </tr>
+            <tr>
+                <td><button url="www.facebook.com"> <img src="{{ asset('img/facebook.png') }}" /> </button></td>
+                <td><button> <img src="{{ asset('img/twitter.png') }}" /> </button></td>
+                <td><button> <img src="{{ asset('img/google.png') }}" /> </button></td>
+            </tr>
+        </table>
+        <div class="webpage_devl">federico solorza - ningun derecho reservado</div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+{% block last_javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('bootstrap/docs/assets/js/vendor/jquery.min.js') }}"></script>
+	<script>window.jQuery || document.write('<script src="{{ asset('bootstrap/docs/assets/js/vendor/jquery.min.js') }}"><\/script>')</script>
+	<script src="{{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+

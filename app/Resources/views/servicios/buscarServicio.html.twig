@@ -1,0 +1,49 @@
+{% extends 'starter.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block last_javascripts %}
+    {{ parent() }}
+    <script>
+        var $viaje_lugarOrigen;
+        $viaje_lugarOrigen = $('#buscar_viaje_lugarOrigen');
+        
+        $viaje_lugarOrigen.change(function() {
+            var $form = $(this).closest('form');
+            var data = {};
+
+            data[$viaje_lugarOrigen.attr('name')] = $viaje_lugarOrigen.val();
+//			alert($viaje_lugarOrigen.val());
+            
+            $.ajax({
+                url : $form.attr('action'),
+                type: $form.attr('method'),
+                data : data,
+                success: function(html) {
+					$('#buscar_viaje_lugarOrigenFecha').replaceWith(
+                            $(html).find('#buscar_viaje_lugarOrigenFecha'));
+					$('#buscar_viaje_lugarDestino').replaceWith(
+                            $(html).find('#buscar_viaje_lugarDestino'));
+					$('#buscar_viaje_lugarDestinoFecha').replaceWith(
+                            $(html).find('#buscar_viaje_lugarDestinoFecha'));
+					$('#buscar_viaje_viaje').replaceWith(
+                            $(html).find('#buscar_viaje_viaje'));
+
+
+				}
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block innerBody %}
+    {{ form_start(form) }}
+
+        {{ form_row(form.lugarOrigen) }}
+        {{ form_row(form.lugarOrigenFecha) }}    
+        {{ form_row(form.lugarDestino) }}
+        {{ form_row(form.lugarDestinoFecha) }}
+        {{ form_row(form.viaje) }}    
+
+         <button type="submit" class="btn btn-info">Buscar</button>
+    {{ form_end(form) }}
+{% endblock %}

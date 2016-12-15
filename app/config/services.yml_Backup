@@ -1,0 +1,14 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+
+#<service id="smtc.main.form.autocomplete_entity_type" class="SMTC\MainBundle\Form\Type\AutocompleteEntityType">
+#    <argument type="service" id="doctrine.orm.entity_manager"/>
+#    <tag name="form.type" alias="autocomplete_entity" />
+#</service>

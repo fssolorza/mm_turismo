@@ -1,0 +1,17 @@
+{% extends 'servicios/formServicio.html.twig' %}
+
+
+{% block innerBody %}
+
+    {% block name %}
+        <h4>Nuevo Servicio de Evento</h4>
+    {% endblock %}
+    
+    {% block servicioForm %}
+		{{ parent() }}
+
+		{% block button %}
+			<button type="submit" class="btn btn-success">Guardar</button>
+		{% endblock %}
+	{% endblock %}		
+{% endblock %}

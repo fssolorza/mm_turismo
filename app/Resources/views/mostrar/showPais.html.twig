@@ -1,0 +1,15 @@
+{% extends 'starter.html.twig' %}
+
+
+{% block innerBody %}
+
+    {% block name %}
+        <h4>Datos del Pais</h4>
+    {% endblock %}
+    
+    {% block servicioForm %}
+		{{ form_start(form) }}
+			{{ form_widget(form) }}
+		{{ form_start(form) }}		
+	{% endblock %}		
+{% endblock %}

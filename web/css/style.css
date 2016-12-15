@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+/* elementos flotantes */
+.fl-lt{
+	float:left;
+}
+
+.fl-rt {
+	float:right;
+}
+
+/*clear, para limpiar elementos flotantes*/
+.clear{
+	clear:both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+.clearfix:before,
+.clearfix:after{
+	content: '0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+
+}
+.clearfix:after{
+	clear: both;
+}
+
+/* estilos basicos */
+body{
+	background:#ddd;
+	font-size: 14px;
+	font-weight: normal;
+	color:#888;
+	margin: 0;
+}
+h2{
+	font-size: 38px;
+	color: #222;
+	font-weight: 700;
+	margin: 35px 0 25px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+h3{
+	font-size: 16px;
+	color: #222;
+	font-weight: 600;
+	margin: 0 0 5px 0;
+	text-transform: uppercase;
+}
+h6{
+	font-size: 16px;
+	color: #888;
+	font-weight: 400;
+	margin: 35px 0 60px 0;
+	text-align: center;
+}
+p{
+	line-height: 24px;
+	margin: 0;
+}
+
+/* navegacion */
+.nav {
+	float: right;
+}
+.nav ul{
+	list-style: none;
+	padding: 0;
+}
+
+.nav ul li:first-child{
+
+}
+.nav ul li:last-child{
+	margin: 0 0 0 0px;
+}
+.nav ul li a{
+	display: block;
+	/*color: #22;*/
+	text-decoration: none;
+	font-weight: 124;
+	transition: all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;;
+}
+.nav ul li a:hover{
+	color: #49b5e7;
+}
+
+
+/* encabezados */
+#header_outer{
+	background: #fff;
+	padding: 30px 0px;
+}
+
+.header_section{
+	position: relative;
+}
+
+.logo{
+	float:left;
+}
+
+.res-nav_clik{
+	display: none;
+}
+
+
+/* contentido superior */
+
+.top_content{
+	background: #f9f9f9;
+	position: relative;
+	padding: 50px;
+}
+
+.white_pad{
+	position: relative;
+	right: 0px;
+	bottom: 0px;
+}
+.white_pad img{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+.top_left_cont{
+	padding: 110px 0;
+}
+.top_left_cont h2{
+	font-size: 40px;
+	color: #111;
+	line-height: 52px;
+	margin: 0 0 26px 0;
+	font-family: sans-serif;
+	text-align: left;
+	font-weight: 700;
+}
+.top_left_cont p{
+	font-size: 16px;
+	color: #888;
+	line-height:26px;
+	margin: 0 0 30px 0;
+	font-family: sans-serif;
+}
+
+/* Sugerencias */
+#sugerencias{
+	width: 95%;
+}
+
+
+/* Servicios */
+#service{
+	padding: 83px 0px;
+}
+.service_area{
+	padding: 40px 0 40px;
+}
+.service_section{
+
+}
+.service_block{
+	text-align:center;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.service_icon{
+	border: 2px solid #f56eab;
+	border-radius: 50%;
+	width:90px;
+	height: 90px;
+	margin: 0px auto 25px;
+}
+
+.service_icon.icon2{
+	border:2px solid #7cc576;
+}
+.service_icon.icon3{
+	border:2px solid #49b5e7;
+}
+.service_icon span{
+	background: #f56eab;
+	border:3px solid #fff;
+	border-radius: 50%;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.service_icon.icon2 span{
+	background: #7cc576;
+}
+.service_icon.icon3 span{
+	background: #49b5e7;
+}
+.service_icon i{
+	color: #fff;
+	font-size: 40px;
+	margin-top: 0;
+	position: relative;
+	top: 14px;
+	z-index: 20;
+}
+
+.service_icon img{
+	border-radius: 50%;
+	margin-top: 3;
+	width: 83px;
+	height: 83px;
+}
+
+.service_block h3{
+	font-family: sans-serif;
+	color: #111;
+	font-size: 18px;
+	margin: 35px 0 18px;
+	font-weight: 600;
+}
+
+.service_block p{
+	font-size: 16px;
+	color: #888;
+	margin: 0px;
+}
+
+
+/* Destinos */
+#destinos{
+	padding: 0px 0px;
+}
+.dest_area{
+	overflow:auto;
+	width: 840px;
+	margin: 0px auto;
+}
+.dest_section{
+	padding: 35px 0 0 0;
+}
+.dest_section.btm{
+	padding: 20px 0 0 0;
+}
+.dest_foto{
+	float: left;
+	text-align: center;
+}
+
+.dest_foto .flt{
+	float: right;
+}
+.dest_foto_pic{
+	border-radius: 50%;
+	border: 2px solid #f9f9f9;
+	margin: 0 0 15px 0;
+	width: 220px;
+	height: 220px;
+}
+
+.dest_foto_pic img{
+	border-radius: 50%;
+	border: 3px solid #f9f9f9;
+	width:220px;
+	height:220px;
+}
+.dest_foto h3{
+	font-size: 18px;
+	color: #49b5e7;
+	margin: 0 0 0 0;
+}
+.dest_foto span{
+	display: block;
+	font-size: 16px;
+	color: #888;
+}
+.quote_section{
+	width: 468px;
+	background: #fff;
+	position: relative;
+	padding: 40px 30px;
+	float: left;
+	margin: 35px 0 0 30px;
+}
+.quote_section.flt{
+	float: left;
+	padding-bottom:10px;
+}
+.quote_section p{
+	font-family: sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	font-weight: 300;
+	color: #888;
+	text-align: center;
+	position: relative;
+}
+.quote_section p b{
+	display: inline-block;font-size: 22px;
+	left: -9px;
+	position: relative;
+	top: 4px;
+}
+.quote_section p small{
+	display: inline-block;
+	right: -9px;
+	position: relative;
+	top: 4px;
+}
+.quote_arrow {
+	position: absolute;
+	background: url(/web/img/quote_sign_left.png) no-repeat left top;
+	width: 23px;
+	height: 25px;
+	left: -22px;
+	top: 50%;
+	margin-top: -15.5px;
+
+}
+

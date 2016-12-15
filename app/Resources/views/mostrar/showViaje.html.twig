@@ -1,0 +1,26 @@
+{% extends 'starter.html.twig' %}
+
+
+{% block innerBody %}
+
+    {% block name %}
+        <h4>Datos del Viaje</h4>
+    {% endblock %}
+    
+    {% block servicioForm %}
+
+		{{ form_row(form.nombre) }}
+		{{ form_row(form.costo) }}
+
+		{{ form_row(form.origen) }}
+		{{ form_row(form.destino) }}
+
+	
+
+
+		{% block button %}
+			<button type="submit" class="btn btn-success">Guardar</button>
+		{% endblock %}
+		
+	{% endblock %}		
+{% endblock %}

@@ -1,0 +1,24 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    app.menu.builder:
+        class: AppBundle\Menu\Builder
+        arguments: ["@service_container"]
+        #type of the constructor parameter for the specified class 
+
+    app.menu:
+        class: Knp\KnpMenu\MenuItem
+        factory: ["@app.menu.builder", createAdminMenu]
+        arguments: ["@knp_menu.factory"]
+        tags:
+            - { name: knp_menu.menu, alias: admin_menu }
+
+    app.blog.menu:
+        class: Knp\KnpMenu\MenuItem
+        factory: ["@app.menu.builder", createBlogMenu]
+        arguments: ["@knp_menu.factory"]
+        tags:
+            - { name: knp_menu.menu, alias: blog_menu }

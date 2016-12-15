@@ -1,0 +1,3 @@
+Estos twig estan aca principalmente porque tienen una rutina javascript y listeners asociados a elementos que son mostrados para los formType sobre los cuales estos twigs se crearon.
+Sin embargo y dejando de lado los javascripts, todos los twigs de esta carpeta hacen exactamente lo mismo... entonces cual es la mejor forma de hacer esto?
+Ademas y no menos importante, los formType que estos twigs asocian indirectamente no pueden ser utilizados "as is" por otros twigs ya que los mismos tienen sus propios eventListeners que en conjunto con los javascripts logran la funcionalidad deseada. 
